@@ -12,27 +12,27 @@
 
 		<h1>[name]</h1>
 
-		<p class="desc">Creates a texture directly from raw data, width and height.</p>
+		<p class="desc">直接从原始数据，宽度和高度创建纹理</p>
 
 
-		<h2>Constructor</h2>
+		<h2>构造器</h2>
 
 		<h3>[name]( data, width, height, format, type, mapping, wrapS, wrapT, magFilter, minFilter, anisotropy )</h3>
 		<p>
-			The data argument must be an ArrayBuffer or a typed array view.
-			Further parameters correspond to the properties inherited from [page:Texture], where both magFilter and minFilter default to THREE.NearestFilter. The properties flipY and generateMipmaps are intially set to false.
+			data参数必须是ArrayBuffer或类型化数组试图
+			其它参数对应于从[page:Texture]集继承的属性, 其中magFilter和minFilter的默认值都是THREE.NearestFilter。flipY和generateMipmaps属性的初始值是false.
 		</p>
 		<p>
-			The interpretation of the data depends on type and format:
-			If the type is THREE.UnsignedByteType, a Uint8Array will be useful for addressing the texel data.
-			If the format is THREE.RGBAFormat, data needs four values for one texel; Red, Green, Blue and Alpha (typically the opacity). Similarly, THREE.RGBFormat specifies a format where only three values are used for each texel.<br />
+			对data的解释取决于type和format:
+			如果type参数的值是THREE.UnsignedByteType, 那么Uint8Array 对于纹理元素数据的寻址非常有用.
+			如果format参数值是THREE.RGBAFormat, data参数需为每个纹理元素提供4个值：红, 绿, 蓝和Alpha (表示透明度). 类似的, 如果format参数值是THREE.RGBFormat,则每个纹理元素只需要3个值<br />
+			对于打包类型, THREE.UnsignedShort4444Type, THREE.UnsignedShort5551Type 或 THREE.UnsignedShort565Type, 1个纹理元素的所有颜色分量可以作为Uint16Array的整数元素内的位域来寻址<br />
 
-			For the packed types, THREE.UnsignedShort4444Type, THREE.UnsignedShort5551Type or THREE.UnsignedShort565Type, all color components of one texel can be addressed as bitfields within an integer element of a Uint16Array.<br />
-
-			In order to use the types THREE.FloatType and THREE.HalfFloatType, the WebGL implementation must support the respective extensions OES_texture_float and OES_texture_half_float. In order to use THREE.LinearFilter for component-wise, bilinear interpolation of the texels based on these types, the WebGL extensions OES_texture_float_linear or OES_texture_half_float_linear must also be present.
+            为了使用THREE.FloatType 和 THREE.HalfFloatType类型, WebGL的实现必须支持OES_texture_float和OES_texture_half_float扩展.
+            为了将THREE.LinearFilter用于基于这些类型的纹理元素的分量以及双线性插值, 还必须有OES_texture_float_linear或OES_texture_half_float_linear扩展.
 		</p>
 
-		<h2>Example</h2>
+		<h2>示例</h2>
 
 		<code>
 		// create a buffer with color data
@@ -60,17 +60,17 @@
 		texture.needsUpdate = true
 		</code>
 
-		<h2>Properties</h2>
+		<h2>属性</h2>
 
 		<h3>[property:Image image]</h3>
 		<p>
-		Overridden with a record type holding data, width and height.
+		重写了包含数据，宽度和高度的记录类型
 		</p>
 
-		<h2>Methods</h2>
+		<h2>方法</h2>
 
 
-		<h2>Source</h2>
+		<h2>源码</h2>
 
 		[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
 	</body>

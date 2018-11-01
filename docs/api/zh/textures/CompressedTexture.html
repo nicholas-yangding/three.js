@@ -13,75 +13,74 @@
 		<h1>[name]</h1>
 
 		<p class="desc">
-		Creates a texture based on data in compressed form, for example from a [link:https://en.wikipedia.org/wiki/DirectDraw_Surface DDS] file.<br /><br />
+		基于压缩形式的数据创建纹理, 打开[link:https://en.wikipedia.org/wiki/DirectDraw_Surface DDS]文件查看示例<br /><br />
 
 
-		For use with the [page:CompressedTextureLoader CompressedTextureLoader].
+		与[page:CompressedTextureLoader CompressedTextureLoader]一起使用.
 		</p>
 
 
-		<h2>Constructor</h2>
+		<h2>构造器</h2>
 
 
 		<h3>[name]( [param:Array mipmaps], [param:Number width], [param:Number height], [param:Constant format], [param:Constant type], [param:Constant mapping], [param:Constant wrapS], [param:Constant wrapT], [param:Constant magFilter], [param:Constant minFilter], [param:Number anisotropy] )</h3>
 		<p>
-		[page:Array mipmaps] -- The mipmaps array should contain objects with data, width and height. The mipmaps should be of the correct format and type.<br />
+		[page:Array mipmaps] -- mipmaps数组应该包含具有数据，高度和宽度的对象. mipmaps的类型和格式必须正确<br />
 
-		[page:Number width] -- The width of the biggest mipmap.<br />
+		[page:Number width] -- 最大的mipmap的宽度<br />
 
-		[page:Number height] -- The height of the biggest mipmap.<br />
+		[page:Number height] -- 最大的mipmap的高度<br />
 
-		[page:Constant format] -- The format used in the mipmaps.
-		See [page:Textures ST3C Compressed Texture Formats],
-		[page:Textures PVRTC Compressed Texture Formats] and
-		[page:Textures ETC Compressed Texture Format] for other choices.<br />
+		[page:Constant format] -- mipmaps中使用的格式.
+		其它可选值参见[page:Textures ST3C Compressed Texture Formats],
+		[page:Textures PVRTC Compressed Texture Formats]以及[page:Textures ETC Compressed Texture Format]<br />
 
-		[page:Constant type] -- Default is [page:Textures THREE.UnsignedByteType].
-		See [page:Textures type constants] for other choices.<br />
+		[page:Constant type] -- 默认值是[page:Textures THREE.UnsignedByteType].
+		其它可选值参见[page:Textures type constants]<br />
 
-		[page:Constant mapping] --  How the image is applied to the object. An object type of [page:Textures THREE.UVMapping].
-		See [page:Textures mapping constants] for other choices.<br />
+		[page:Constant mapping] --  图像是如何应用于对象的. 是一个[page:Textures THREE.UVMapping]类型的对象
+		其它可选值参见[page:Textures mapping constants]<br />
 
-		[page:Constant wrapS] -- The default is [page:Textures THREE.ClampToEdgeWrapping].
-		See [page:Textures wrap mode constants] for other choices.<br />
+		[page:Constant wrapS] -- 默认值是[page:Textures THREE.ClampToEdgeWrapping].
+		其它可选值参见[page:Textures wrap mode constants]<br />
 
-		[page:Constant wrapT] -- The default is [page:Textures THREE.ClampToEdgeWrapping].
-		See [page:Textures wrap mode constants] for other choices.<br />
+		[page:Constant wrapT] -- 默认值是[page:Textures THREE.ClampToEdgeWrapping].
+		其它可选值参见[page:Textures wrap mode constants]<br />
 
-		[page:Constant magFilter] -- How the texture is sampled when a texel covers more than one pixel.
-		The default is [page:Textures THREE.LinearFilter]. See [page:Textures magnification filter constants] for other choices.<br />
+		[page:Constant magFilter] -- 当纹理元素覆盖多个像素时如何对纹理进行采样。
+		默认值是[page:Textures THREE.LinearFilter]. 其它可选值参见[page:Textures magnification filter constants]<br />
 
-		[page:Constant minFilter] -- How the texture is sampled when a texel covers less than one pixel.
-		 The default is [page:Textures THREE.LinearMipMapLinearFilter]. See [page:Textures minification filter constants] for other choices.<br />
+		[page:Constant minFilter] -- 当一个纹理元素覆盖少于1个像素时如何对纹理进行采样。
+		默认值是[page:Textures THREE.LinearMipMapLinearFilter]. 其它可选值参见[page:Textures minification filter constants]<br />
 
-		[page:Number anisotropy] -- The number of samples taken along the axis through the pixel that has the highest density of texels.
-		By default, this value is 1. A higher value gives a less blurry result than a basic mipmap, at the cost of more texture samples being used.
-		Use renderer.getMaxAnisotropy() to find the maximum valid anisotropy value for the GPU; this value is usually a power of 2.<br /><br />
+		[page:Number anisotropy] -- 沿着轴穿过具有最高纹素密度的像素的样本数。
+		默认值是1. 较高的值比基本的mipmap产生更少的模糊结果，代价是使用更多纹理样本.
+		使用[page:WebGLrenderer.getMaxAnisotropy renderer.getMaxAnisotropy]()找到GPU的最大可靠各向异性值，该值一般是2的幂<br /><br />
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>属性</h2>
 
-		See the base [page:Texture Texture] class for common properties.
+		共有属性请参阅[page:Texture Texture]基类.
 
 		<h3>[property:boolean flipY]</h3>
 
 		<p>
-			False by default. Flipping textures does not work for compressed textures.
+		默认是false. 纹理翻转对压缩纹理来说没用.
 		</p>
 
 		<h3>[property:boolean generateMipmaps]</h3>
 
 		<p>
-			False by default. Mipmaps can't be generated for compressed textures
+		默认是false.压缩纹理生成不了mipmap
 		</p>
 
 
-		<h2>Methods</h2>
+		<h2>方法</h2>
 
 
 
-		<h2>Source</h2>
+		<h2>源码</h2>
 
 		[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
 	</body>

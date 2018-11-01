@@ -13,100 +13,99 @@
 		<h1>[name]</h1>
 
 		<p class="desc">
-		Creates a texture for use as a Depth Texture. Require support for the
-	[link:https://www.khronos.org/registry/webgl/extensions/WEBGL_depth_texture/ WEBGL_depth_texture] extension.
+		创建一个用作深度纹理的纹理. 需要支持[link:https://www.khronos.org/registry/webgl/extensions/WEBGL_depth_texture/ WEBGL_depth_texture]扩展
 		</p>
 
-		<h2>Example</h2>
+		<h2>示例</h2>
 
 		[example:webgl_depth_texture depth / texture]
 
-		<h2>Constructor</h2>
+		<h2>构造器</h2>
 		<h3>[name]( [param:Number width], [param:Number height], [param:Constant type], [param:Constant wrapS], [param:Constant wrapT], [param:Constant magFilter], [param:Constant minFilter], [param:Number anisotropy], [param:Constant format] )</h3>
 
 		<p>
-		[page:Number width] -- width of the texture.<br />
+		[page:Number width] -- 纹理宽度.<br />
 
-		[page:Number height] -- height of the texture.<br />
+		[page:Number height] -- 纹理高度.<br />
 
-		[page:Constant type] -- Default is [page:Textures THREE.UnsignedShortType].
-		See [page:Textures type constants] for other choices.<br />
+		[page:Constant type] -- 默认值是[page:Textures THREE.UnsignedShortType].
+		其它选可选值参见[page:Textures type constants]<br />
 
 		[page:Constant mapping] --
-		See [page:Textures type constants] for details.<br />
+		详见 [page:Textures type constants]<br />
 
-		[page:Constant wrapS] -- The default is [page:Textures THREE.ClampToEdgeWrapping].
-		See [page:Textures wrap mode constants] for other choices.<br />
+		[page:Constant wrapS] -- 默认值是[page:Textures THREE.ClampToEdgeWrapping].
+		其它可选值参见[page:Textures wrap mode constants]<br />
 
-		[page:Constant wrapT] -- The default is [page:Textures THREE.ClampToEdgeWrapping].
-		See [page:Textures wrap mode constants] for other choices.<br />
+		[page:Constant wrapT] -- 默认值是[page:Textures THREE.ClampToEdgeWrapping].
+		其它可选值参见[page:Textures wrap mode constants]<br />
 
-		[page:Constant magFilter] -- How the texture is sampled when a texel covers more than one pixel.
-		The default is [page:Textures THREE.NearestFilter]. See [page:Textures magnification filter constants] for other choices.<br />
+		[page:Constant magFilter] -- 当一个纹理元素覆盖多个像素时如何对纹理进行采样。
+		默认值是[page:Textures THREE.NearestFilter]. 其它可选值参见[page:Textures magnification filter constants]<br />
 
-		[page:Constant minFilter] -- How the texture is sampled when a texel covers less than one pixel.
-		The default is [page:Textures THREE.NearestFilter]. See [page:Textures minification filter constants] for other choices.<br />
+		[page:Constant minFilter] -- 当一个纹理元素覆盖少于1个像素时如何对纹理进行采样。
+		默认值是[page:Textures THREE.NearestFilter]. 其它可选值参见[page:Textures minification filter constants]<br />
 
-		[page:Number anisotropy] -- The number of samples taken along the axis through the pixel that has the highest density of texels.
-		By default, this value is 1. A higher value gives a less blurry result than a basic mipmap, at the cost of more texture samples being used.
-		Use [page:WebGLrenderer.getMaxAnisotropy renderer.getMaxAnisotropy]() to find the maximum valid anisotropy value for the GPU; this value is usually a power of 2.<br />
+		[page:Number anisotropy] -- 沿着轴穿过具有最高纹素密度的像素的样本数。
+		默认值是1. 较高的值比基本的mipmap产生更少的模糊结果，代价是使用更多纹理样本.
+		使用[page:WebGLrenderer.getMaxAnisotropy renderer.getMaxAnisotropy]()找到GPU的最大可靠各向异性值，该值一般是2的幂<br />
 
-		[page:Constant format] -- must be either [page:Textures DepthFormat] (default) or [page:Textures DepthStencilFormat].
-		See [page:Textures format constants] for details.<br />
+		[page:Constant format] -- 必须是[page:Textures DepthFormat] (默认) 和 [page:Textures DepthStencilFormat]二者之一
+		详见[page:Textures format constants]<br />
 		</p>
 
 
-		<h2>Properties</h2>
+		<h2>属性</h2>
 
 		<p>
-		See the base [page:Texture Texture] class for common properties
-		- the following are also part of the texture class, but have different defaults here.
+		共有属性请参阅[page:Texture Texture]基类
+		- 以下属性中有一些texture类中也有, 但是具有不同的默认值.
 		</p>
 
 		<h3>[page:Texture.format .format]</h3>
 		<p>
-		Either [page:Textures DepthFormat] (default) or [page:Textures DepthStencilFormat].
-		See [page:Textures format constants] for details.<br />
+		值为[page:Textures DepthFormat] (默认) 或[page:Textures DepthStencilFormat]二者之一.
+		详见[page:Textures format constants]<br />
 		</p>
 
 		<h3>[page:Texture.type .type]</h3>
 		<p>
-		Default is [page:Textures THREE.UnsignedShortType].
-		See [page:Textures format constants] for details.<br />
+		默认值是 [page:Textures THREE.UnsignedShortType].
+		详见[page:Textures format constants]<br />
 		</p>
 
 		<h3>[page:Texture.magFilter .magFilter]</h3>
 		<p>
-		  How the texture is sampled when a texel covers more than one pixel.
-			The default is [page:Textures THREE.NearestFilter].
-		  See [page:Textures magnification filter constants] for other choices.
+        当一个纹理元素覆盖多个像素时如何对纹理进行采样。
+        默认值是[page:Textures THREE.NearestFilter].
+		其它可选值参见[page:Textures magnification filter constants]
 		</p>
 
 		<h3>[page:Texture.minFilter .minFilter]</h3>
 		<p>
-		How the texture is sampled when a texel covers less than one pixel.
-		The default is [page:Textures THREE.NearestFilter].
-		See [page:Textures magnification filter constants] for other choices.
+        当一个纹理元素覆盖少于1个像素时如何对纹理进行采样
+		默认值是[page:Textures THREE.NearestFilter].
+		其它可选值参见[page:Textures magnification filter constants]
 		</p>
 
 		<h3>[page:Texture.flipY .flipY]</h3>
 		<p>
-		Depth textures do not need to be flipped so this is *false* by default.
+        深度纹理不需要翻转，因此默认情况下为*false*
 		</p>
 
 		<h3>[page:Texture.generateMipmaps .generateMipmaps]</h3>
 		<p>
-		Depth textures do not use mipmaps.
+		深度纹理不使用mipmaps.
 		</p>
 
-		<h2>Methods</h2>
+		<h2>方法</h2>
 
 		<p>
-		See the base [page:Texture Texture] class for common methods.
+		共有方法请参阅[page:Texture Texture]基类
 		</p>
 
 
-		<h2>Source</h2>
+		<h2>源码</h2>
 
 		[link:https://github.com/mrdoob/three.js/blob/master/src/[path].js src/[path].js]
 	</body>
